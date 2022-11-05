@@ -1,4 +1,4 @@
-from .models import Artiste, Song
+from .models import Artiste, Song, Lyric
 from rest_framework import serializers
 #from datetime import datetime
 
@@ -18,7 +18,14 @@ class SongSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Song
         fields=(
-        "id",
         "title",
          "date_released",
+        )
+
+class LyricSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Lyric
+        fields=(
+        "content",
+        "song_id",
         )

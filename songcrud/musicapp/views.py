@@ -8,8 +8,8 @@
 
 from rest_framework import generics
 
-from .models import Artiste, Song
-from .serializers import ArtisteSerializer, SongSerializer
+from .models import Artiste, Song, Lyric
+from .serializers import ArtisteSerializer, SongSerializer, LyricSerializer
 
 class SongList(generics.ListCreateAPIView):
     queryset = Song.objects.all()
@@ -26,3 +26,11 @@ class ArtisteList(generics.ListCreateAPIView):
 class ArtisteDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Artiste.objects.all()
     serializer_class = ArtisteSerializer  
+
+class LyricList(generics.ListCreateAPIView):
+    queryset = Lyric.objects.all()
+    serializer_class = LyricSerializer
+
+class LyricDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Lyric.objects.all()
+    serializer_class = LyricSerializer  
