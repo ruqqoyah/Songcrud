@@ -23,6 +23,7 @@ class SongSerializer(serializers.HyperlinkedModelSerializer):
         )
 
 class LyricSerializer(serializers.HyperlinkedModelSerializer):
+    # song_id = SongSerializer
     class Meta:
         model = Lyric
         fields=(
